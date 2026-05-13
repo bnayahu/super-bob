@@ -124,6 +124,255 @@ Use the SuperBob methodology for all contributions:
    - Make requested changes
    - Update PR description if scope changes
 
+
+---
+
+## Pull Request Quality Gates
+
+**Every PR MUST include evidence of the following:**
+
+### 1. Evidence of Testing
+
+**Required:**
+- Test output showing all tests pass
+- Verification commands run and output shown
+- No "I tested it" without proof
+
+**Examples:**
+```bash
+# Good - shows actual output
+$ npm test
+✓ 34 tests passing
+0 failures
+
+# Bad - no evidence
+"I tested it and it works"
+```
+
+### 2. Evidence of Verification
+
+**Required:**
+- Fresh command output (not cached)
+- Actual terminal output (copy-paste)
+- All verification steps documented
+
+**For code changes:**
+- Show test suite passing
+- Show linter passing (if applicable)
+- Show build succeeding (if applicable)
+
+**For documentation:**
+- Show markdown validation
+- Show links working
+- Show examples tested
+
+### 3. Code Review Compliance
+
+**Required:**
+- Used requesting-code-review mode OR manual review
+- Review feedback addressed
+- Evidence of fixes (test output, diffs)
+
+**Not acceptable:**
+- "I reviewed it myself" (without using review mode)
+- Skipping review for "simple changes"
+- "Will fix in next PR"
+
+### 4. Documentation Updates
+
+**Required for:**
+- New features → Update README.md
+- Architecture changes → Update docs/ARCHITECTURE.md
+- New modes → Update mode list in ARCHITECTURE.md
+- Breaking changes → Update migration guide
+
+**Not required for:**
+- Bug fixes (unless behavior changes)
+- Internal refactoring
+- Test-only changes
+
+### 5. Discipline Enforcement
+
+**Required:**
+- TDD followed (test-first for code changes)
+- Verification before completion
+- Root cause investigation (for bug fixes)
+- Review completed
+
+**Evidence:**
+- Commit history shows test-first
+- PR description shows investigation process
+- Review feedback and responses included
+
+---
+
+## Reviewer Checklist
+
+**When reviewing PRs, verify:**
+
+### Quality Gates Met
+- [ ] Evidence of testing provided
+- [ ] Evidence of verification provided
+- [ ] Code review compliance shown
+- [ ] Documentation updated (if needed)
+- [ ] Discipline enforced
+
+### Technical Quality
+- [ ] Tests exist and test behavior (not mocks)
+- [ ] Code follows project patterns
+- [ ] Error handling appropriate
+- [ ] No obvious bugs or edge cases
+- [ ] Security considerations addressed
+
+### Process Compliance
+- [ ] TDD followed (for code changes)
+- [ ] Root cause investigated (for bug fixes)
+- [ ] Review feedback addressed
+- [ ] Commits are logical and well-described
+
+---
+
+## Red Flags in PRs
+
+**Reject PRs that:**
+
+❌ **Claim without evidence**
+- "Tests pass" without showing output
+- "I verified it" without proof
+- "Looks good" without investigation
+
+❌ **Skip discipline**
+- Code before tests
+- No review performed
+- Quick fixes without investigation
+- "Too simple to test"
+
+❌ **Incomplete work**
+- Tests failing
+- Linter errors
+- Build broken
+- Documentation missing
+
+❌ **Rationalization**
+- "Just this once"
+- "Will fix later"
+- "Not worth testing"
+- "Trust me"
+
+---
+
+## Good PR Examples
+
+### Example 1: Feature Implementation
+
+```markdown
+## Summary
+Add email validation to user registration
+
+## Evidence of Testing
+```
+$ npm test
+✓ validates email format
+✓ rejects invalid emails
+✓ accepts valid emails
+34/34 tests passing
+```
+
+## Evidence of Verification
+```
+$ npm run lint
+✓ No linting errors
+
+$ npm run build
+✓ Build successful
+```
+
+## Code Review
+Used requesting-code-review mode. Feedback:
+- Add test for empty email → Fixed in commit abc123
+- Extract regex to constant → Fixed in commit def456
+
+Re-review: Approved
+
+## Documentation
+Updated README.md with validation rules
+```
+
+### Example 2: Bug Fix
+
+```markdown
+## Summary
+Fix: Login fails with empty password
+
+## Root Cause Investigation
+Used systematic-debugging mode:
+1. Reproduced bug consistently
+2. Traced to missing validation in submitForm()
+3. Found working validation in other forms
+4. Hypothesis: Missing password check
+
+## Evidence of Testing
+```
+$ npm test
+✓ rejects empty password (NEW TEST)
+✓ existing tests still pass
+35/35 tests passing
+```
+
+## TDD Process
+1. Wrote failing test (commit abc123)
+2. Verified test fails (output shown)
+3. Implemented fix (commit def456)
+4. Verified test passes (output shown)
+
+## Code Review
+Auto-review triggered. No issues found.
+```
+
+---
+
+## Bad PR Examples
+
+### ❌ Example 1: No Evidence
+
+```markdown
+## Summary
+Fixed the bug
+
+## Changes
+Updated the validation logic
+
+## Testing
+I tested it and it works now
+```
+
+**Problems:**
+- No evidence of testing
+- No verification output
+- No review performed
+- No root cause investigation
+
+### ❌ Example 2: Code Before Tests
+
+```markdown
+## Summary
+Add new feature
+
+## Commits
+1. Implement feature
+2. Add tests
+
+## Testing
+All tests pass
+```
+
+**Problems:**
+- Tests written after code (not TDD)
+- No evidence of test output
+- No review mentioned
+
+---
+
 ---
 
 ## Code Standards
