@@ -56,14 +56,32 @@ Switch to **using-superpowers** mode — Bob will select the right skill for you
 
 ---
 
-## The 4 Principles
+## The 4 Principles (Structurally Enforced)
 
-These are non-negotiable. SuperBob enforces them structurally:
+These are non-negotiable. SuperBob enforces them through hard gates, self-checks, and automatic triggers:
 
-1. **No code without a failing test first** — write the test, watch it fail, then implement
-2. **No completion claims without fresh verification** — evidence before assertions
-3. **Root cause investigation before fixes** — understand the problem before patching
-4. **Review early and often** — automatic code review after task completion
+1. **No code without a failing test first**
+   - Enforced by: Phase gates, self-checks, forbidden phrases
+   - Write test → Watch fail → Implement → Watch pass
+
+2. **No completion claims without fresh verification**
+   - Enforced by: Mandatory gate function, forbidden phrases, self-checks
+   - Run command → Show output → Then claim
+
+3. **Root cause investigation before fixes**
+   - Enforced by: 4-phase gates, anti-quick-fix counter, self-checks
+   - Investigate → Hypothesize → Test → Fix
+
+4. **Review early and often**
+   - Enforced by: Automatic spawning, no permission needed, self-checks
+   - Implement → Auto-review → Address feedback → Complete
+
+**Enforcement mechanisms:**
+- 🔒 Hard gates (cannot proceed without completing)
+- 🤔 Self-checks (mandatory questions before actions)
+- 🚫 Forbidden phrases (trigger immediate stops)
+- ⚡ Auto-triggers (review spawns automatically)
+- 🔄 Continuous execution (no unnecessary pauses)
 
 
 ## Recommended Workflows

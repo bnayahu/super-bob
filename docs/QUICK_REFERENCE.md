@@ -187,6 +187,20 @@
 - 🚩 No reproduction case
 - 🚩 Fixing symptoms, not root cause
 
+## Self-Check Questions (Before Every Action)
+
+**Ask yourself before taking ANY action:**
+
+1. ✋ **Right skill?** - Should I be using a different mode?
+2. ✋ **Test first?** - Am I about to write code without a test?
+3. ✋ **Verified?** - Am I about to claim something without proof?
+4. ✋ **Investigated?** - Am I about to fix without understanding?
+5. ✋ **Reviewed?** - Did I skip spawning code review?
+
+**If ANY answer is concerning: STOP. Fix before proceeding.**
+
+---
+
 ---
 
 ## Troubleshooting

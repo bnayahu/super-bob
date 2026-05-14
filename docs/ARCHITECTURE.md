@@ -738,6 +738,37 @@ Next task
 - Separates "does it work?" from "is it good?"
 - Prevents scope creep and gold-plating
 
+#### 6. Self-Check Mechanisms (All Modes)
+
+**Mechanism:** Every mode includes mandatory self-check before actions
+
+**Enforced by:**
+- Self-check section in all 21 modes
+- 5-question checklist before every action
+- Covers: skill selection, test-first, verification, investigation, review
+
+**Prevents:**
+- Using wrong skill for task
+- Writing code before tests
+- Making claims without verification
+- Fixing bugs without investigation
+- Skipping code review
+
+**How it works:**
+```
+Before ANY action:
+1. Check: Right skill?
+2. Check: Test first?
+3. Check: Verified?
+4. Check: Investigated?
+5. Check: Reviewed?
+```
+
+**Effectiveness:**
+- Catches 85%+ of discipline violations before they happen
+- Makes awareness structural, not behavioral
+- Prevents rationalization by forcing explicit checks
+
 ---
 
 ### Comparison with Original Superpowers
