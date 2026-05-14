@@ -1,6 +1,9 @@
 # SuperBob Development Methodology
 
-This workspace enforces SuperBob development discipline.
+**THIS WORKSPACE ENFORCES SUPERBOB DISCIPLINE - NO EXCEPTIONS**
+
+These rules apply to ALL work in this workspace, regardless of mode.
+Violating these rules is not acceptable. They exist to prevent bugs and maintain quality.
 
 ---
 
@@ -38,29 +41,87 @@ When in doubt, use a skill-mode. They exist for a reason.
 
 ---
 
-## Core Principles (Non-Negotiable)
+## Core Principles (ABSOLUTE - NO EXCEPTIONS)
 
-These apply ALWAYS, even if temporarily outside superpowers modes:
+**These apply ALWAYS, in EVERY mode, for ALL work:**
 
-### 🔴 NO CODE WITHOUT FAILING TEST FIRST
+### 🔴 NO CODE WITHOUT FAILING TEST FIRST (ABSOLUTE)
 
-Write the test, watch it fail, then implement.
-If you didn't watch it fail, it proves nothing.
+**The rule:**
+- Write test FIRST (not "at same time")
+- Watch it FAIL (not "assume it fails")
+- THEN implement (not "sketch first")
 
-### ✅ NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION
+**No exceptions for:**
+- ❌ "Simple changes"
+- ❌ "Quick fixes"
+- ❌ "Just refactoring"
+- ❌ "Configuration files"
+- ❌ "It's obvious"
 
-Before saying "done," "fixed," or "passing," run the verification command
-and show the output. Evidence before assertions, always.
+**If you wrote code before test: DELETE IT. Start over.**
 
-### 🔍 ROOT CAUSE INVESTIGATION BEFORE FIXES
+### ✅ NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION (ABSOLUTE)
 
-No fixes without understanding the root cause first.
-Patching symptoms creates more bugs.
+**The rule:**
+- Run verification command (fresh, not cached)
+- Show actual output (copy-paste terminal)
+- THEN make claim (not before)
 
-### 👁️ REVIEW EARLY, REVIEW OFTEN
+**Forbidden phrases:**
+- ❌ "Tests pass" (without output)
+- ❌ "Should work" (without running)
+- ❌ "I verified it" (without proof)
+- ❌ "Looks correct" (without testing)
 
-Code review is automatic after task completion (test-driven-development/systematic-debugging).
-Catch issues before they compound.
+**If you didn't show output: You didn't verify it.**
+
+### 🔍 ROOT CAUSE INVESTIGATION BEFORE FIXES (ABSOLUTE)
+
+**The rule:**
+- Investigate root cause (Phase 1-3)
+- Form hypothesis (testable)
+- THEN fix (Phase 4)
+
+**No exceptions for:**
+- ❌ "Obvious bugs"
+- ❌ "Quick fixes"
+- ❌ "Emergency situations"
+- ❌ "Time pressure"
+
+**If you didn't investigate: You're patching symptoms.**
+
+### 👁️ REVIEW EARLY, REVIEW OFTEN (AUTOMATIC)
+
+**The rule:**
+- Code review is AUTOMATIC after implementation
+- Spawned by TDD/debugging modes
+- No permission needed
+- No skipping for "simple changes"
+
+**This is structural enforcement, not optional.**
+
+---
+
+## How These Rules Are Enforced
+
+**Structural enforcement (hard to bypass):**
+- Auto-review spawns automatically (no permission)
+- Phase gates block progression (must complete checkpoints)
+- Forbidden phrases trigger stops (self-check mechanism)
+- Continuous execution (no unnecessary pauses)
+
+**Behavioral enforcement (requires discipline):**
+- Test-first discipline (must choose to follow)
+- Evidence before claims (must choose to verify)
+- Root cause investigation (must choose to investigate)
+
+**When you violate these rules:**
+- Quality suffers (bugs ship, tech debt accumulates)
+- Time wastes (rework, debugging, fixing)
+- Trust breaks (claims without evidence)
+
+**These rules exist because they work. Follow them.**
 
 ---
 
